@@ -19,15 +19,24 @@ with col_m:
     st.image("khdrblogo.jpg", use_container_width=True)
     
     # اختيار الثيم بشكل مباشر
+   # اختيار الثيم بشكل مباشر
     theme_choice = st.segmented_control(
         "اختر جوك يالذيب:",
         options=["🌙 وضع الليل", "☀️ وضع النهار"],
         default="🌙 وضع الليل"
     )
     
+    # التأكد من عدم وجود قيمة فارغة
     if theme_choice is None:
         theme_choice = "🌙 وضع الليل"
-        dark_mode = True if "🌙" in theme_choice else False
+        
+    # تعريف المتغير (تأكد أن هذا السطر موجود قبل سطر if dark_mode)
+    dark_mode = True if "🌙" in theme_choice else False
+
+# 3. إعدادات الألوان (هنا سطر 34 اللي فيه المشكلة)
+if dark_mode:
+    bg_color = "#0f172a"
+    # ... بقية الكود
         
 
 # 3. إعدادات الألوان
@@ -96,4 +105,5 @@ if prompt := st.chat_input("وين نوينا يالذيب؟ (اكتب أي مك
             st.markdown(res)
 
             st.session_state.messages.append({"role": "assistant", "content": res})
+
 
