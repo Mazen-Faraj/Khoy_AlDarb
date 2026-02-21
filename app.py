@@ -28,7 +28,7 @@ with col_m:
     if theme_choice is None:
         theme_choice = "🌙 وضع الليل"
         
-    dark_mode = True if "🌙" in theme_choice else False
+    dark_mode = True if "🌙" in theme_choice else Falseالم
 
 # 3. إعدادات الألوان
 if dark_mode:
@@ -54,7 +54,7 @@ st.markdown(f"""
     </style>
     """, unsafe_allow_html=True)
 
-st.markdown('<div class="main-header"><h1>⛺ خوي الدرب</h1><p>تطوير المبدع: مازن الشمري</p></div>', unsafe_allow_html=True)
+st.markdown('<div class="main-header"><h1>⛺ خوي الدرب</h1><p>تطوير: مازن الشمري</p></div>', unsafe_allow_html=True)
 
 # 4. ربط API Cohere
 api_key = "Zb5IsbR1FgG0MW2mDnIXdieerAkoSNRUPe4JUFgC"
@@ -67,7 +67,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# 5. دالة الرد (هنا التعديل ليصبح عالمياً)
+# دالة الرد (هنا التعديل ليصبح عالمياً)
 def call_cohere(prompt):
     try:
         response = co.chat(
@@ -94,4 +94,5 @@ if prompt := st.chat_input("وين نوينا يالذيب؟ (اكتب أي مك
         with st.spinner("خوي الدرب يلف العالم عشانك..."):
             res = call_cohere(prompt)
             st.markdown(res)
+
             st.session_state.messages.append({"role": "assistant", "content": res})
