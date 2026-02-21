@@ -61,8 +61,7 @@ st.markdown(f"""
     </style>
     """, unsafe_allow_html=True)
 
-st.markdown('<div class="main-header"><h1>⛺ خوي الدرب</h1><p>تطوير: مازن الشمري</p></div>', unsafe_allow_html=True)
-
+st.markdown('<div class="main-header"><h1>Khoy AlDarb | خوي الدرب</h1><p>تطوير المبدع: مازن الشمري</p></div>', unsafe_allow_html=True)
 # 4. ربط API Cohere
 api_key = "Zb5IsbR1FgG0MW2mDnIXdieerAkoSNRUPe4JUFgC"
 co = cohere.ClientV2(api_key)
@@ -103,6 +102,7 @@ if prompt := st.chat_input("وين نوينا يالذيب؟ (اكتب أي مك
             st.markdown(res)
 
             st.session_state.messages.append({"role": "assistant", "content": res})
+
 
 
 
