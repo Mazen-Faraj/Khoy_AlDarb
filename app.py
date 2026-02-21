@@ -3,8 +3,7 @@ import cohere
 import os
 
 # 1. إعدادات الصفحة والواجهة
-st.set_page_config(page_title="خوي الدرب | مازن الشمري", page_icon="⛺")
-# إخفاء الأسهم والقائمة الجانبية تماماً
+st.set_page_config(page_title="Khoy AlDarb | خوي الدرب", page_icon=None)# إخفاء الأسهم والقائمة الجانبية تماماً
 st.markdown("""
     <style>
     [data-testid="collapsedControl"] { display: none; }
@@ -104,6 +103,7 @@ if prompt := st.chat_input("وين نوينا يالذيب؟ (اكتب أي مك
             st.markdown(res)
 
             st.session_state.messages.append({"role": "assistant", "content": res})
+
 
 
 
