@@ -27,8 +27,8 @@ with col_m:
     
     if theme_choice is None:
         theme_choice = "🌙 وضع الليل"
+        dark_mode = True if "🌙" in theme_choice else False
         
-    dark_mode = True if "🌙" in theme_choice else Falseالم
 
 # 3. إعدادات الألوان
 if dark_mode:
@@ -96,3 +96,4 @@ if prompt := st.chat_input("وين نوينا يالذيب؟ (اكتب أي مك
             st.markdown(res)
 
             st.session_state.messages.append({"role": "assistant", "content": res})
+
