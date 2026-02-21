@@ -62,7 +62,8 @@ st.markdown(f"""
     """, unsafe_allow_html=True)
 
 st.markdown('<div class="main-header"><h1 style="text-align: center; width: 100%; direction: ltr;">Khoy AlDarb | خوي الدرب</h1><p style="text-align: center;">تطوير: مازن الشمري</p></div>', unsafe_allow_html=True)# 4. ربط API Cohere
-api_key = "Zb5IsbR1FgG0MW2mDnIXdieerAkoSNRUPe4JUFgC"
+# استدعاء المفتاح من الخزنة السرية في ستريمليت
+api_key = st.secrets["COHERE_API_KEY"]
 co = cohere.ClientV2(api_key)
 
 if "messages" not in st.session_state:
@@ -101,6 +102,7 @@ if prompt := st.chat_input("وين نوينا يالذيب؟ (اكتب أي مك
             st.markdown(res)
 
             st.session_state.messages.append({"role": "assistant", "content": res})
+
 
 
 
